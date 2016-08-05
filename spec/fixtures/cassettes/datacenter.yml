@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://cloudpanel-api.1and1.com/v1/datacenters
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - excon/0.49.0
+      X-Token:
+      - _DUMMY_TOKEN_
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Wed, 27 Jul 2016 16:37:09 GMT
+      Server:
+      - Apache
+      X-Rate-Limit-Limit:
+      - '25'
+      X-Rate-Limit-Remaining:
+      - '24'
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      Strict-Transport-Security: _DUMMY_SEC_
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - X-API-TOKEN, X-USER
+      Access-Control-Allow-Methods:
+      - POST
+      Access-Control-Expose-Headers:
+      - Error-Msg
+      Connection:
+      - close
+      Content-Type:
+      - application/json
+      Set-Cookie: _DUMMY_COOKIE_
+      X-Iinfo:
+      - 4-245159-245197 NNNN CT(74 164 0) RT(1469637425232 3567) q(0 1 3 -1) r(7 7)
+        U5
+      X-Cdn:
+      - Incapsula
+    body:
+      encoding: UTF-8
+      string: '[{"id":"81DEF28500FBC2A973FC0C620DF5B721","location":"Spain","country_code":"ES","default":0},{"id":"908DC2072407C94C8054610AD5A53B8C","location":"United
+        States of America","country_code":"US","default":1},{"id":"4EFAD5836CE43ACA502FD5B99BEE44EF","location":"Germany","country_code":"DE","default":0},{"id":"5091F6D8CBFEF9C26ACE957C652D5D49","location":"United
+        Kingdom of Great Britain and Northern Ireland","country_code":"GB","default":0}]'
+    http_version: 
+  recorded_at: Wed, 27 Jul 2016 16:37:08 GMT
+recorded_with: VCR 3.0.3

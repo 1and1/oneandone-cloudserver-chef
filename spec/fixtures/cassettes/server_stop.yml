@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://cloudpanel-api.1and1.com/v1/servers/951FEECF08A537A018B7D0285EAEEF6E/status/action
+    body:
+      encoding: UTF-8
+      string: '{"action":"POWER_OFF","method":"SOFTWARE"}'
+    headers:
+      User-Agent:
+      - excon/0.49.0
+      X-Token:
+      - _DUMMY_TOKEN_
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 202
+      message: ''
+    headers:
+      Date:
+      - Sat, 30 Jul 2016 21:54:12 GMT
+      Server:
+      - Apache
+      X-Rate-Limit-Limit:
+      - '25'
+      X-Rate-Limit-Remaining:
+      - '24'
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      Strict-Transport-Security: _DUMMY_SEC_
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - X-API-TOKEN, X-USER
+      Access-Control-Allow-Methods:
+      - POST
+      Access-Control-Expose-Headers:
+      - Error-Msg
+      Connection:
+      - close
+      Content-Type:
+      - application/json
+      Set-Cookie: _DUMMY_COOKIE_
+      X-Iinfo:
+      - 5-8145608-8145759 NNNN CT(69 161 0) RT(1469915647835 3997) q(0 0 2 -1) r(10
+        10) U5
+      X-Cdn:
+      - Incapsula
+    body:
+      encoding: UTF-8
+      string: '{"id":"951FEECF08A537A018B7D0285EAEEF6E","cloudpanel_id":"EB28DA9","name":"test-test","description":"test-desc","datacenter":{"id":"4EFAD5836CE43ACA502FD5B99BEE44EF","country_code":"DE","location":"Germany"},"creation_date":"2016-07-27T19:04:14+00:00","first_password":"Hz353u7574","rsa_key":0,"status":{"state":"POWERING_OFF","percent":0},"hardware":{"fixed_instance_size_id":"65929629F35BBFBA63022008F773F3EB","vcore":1,"cores_per_processor":1,"ram":1,"hdds":[{"id":"E181C3906D358642F5173400B7DCEC44","size":40,"is_main":true}]},"image":{"id":"9B9A214D50A7EEE8D9E37295DF834F70","name":"debian7-32min"},"dvd":null,"snapshot":null,"ips":[{"id":"333DEFC4E57846A09DDB6C847257A573","ip":"212.227.175.76","type":"IPV4","reverse_dns":null,"firewall_policy":{"id":"A4D6302FA44955C797772E34880CBA42","name":"centos7-64cpanel"},"load_balancers":[]}],"alerts":[],"monitoring_policy":null,"private_networks":null}'
+    http_version: 
+  recorded_at: Sat, 30 Jul 2016 21:54:09 GMT
+recorded_with: VCR 3.0.3
