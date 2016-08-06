@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://cloudpanel-api.1and1.com/v1/firewall_policies
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - excon/0.49.0
+      X-Token:
+      - _DUMMY_TOKEN_
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Mon, 01 Aug 2016 21:49:33 GMT
+      Server:
+      - Apache
+      X-Rate-Limit-Limit:
+      - '25'
+      X-Rate-Limit-Remaining:
+      - '24'
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      Strict-Transport-Security: _DUMMY_SEC_
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - X-API-TOKEN, X-USER
+      Access-Control-Allow-Methods:
+      - POST
+      Access-Control-Expose-Headers:
+      - Error-Msg
+      Connection:
+      - close
+      Content-Type:
+      - application/json
+      Set-Cookie: _DUMMY_COOKIE_
+      X-Iinfo:
+      - 9-23015655-23016050 NNNN CT(67 150 0) RT(1470088167315 5490) q(0 0 2 -1) r(11
+        11) U5
+      X-Cdn:
+      - Incapsula
+    body:
+      encoding: UTF-8
+      string: '[{"id":"C76E08E8E689330132A67E8DAF163072","name":"Windows","description":"Windows","state":"ACTIVE","creation_date":"2015-10-16T11:19:11+00:00","default":1,"rules":[{"id":"9C4867FE542B1D106ACF5BD8EAF43FB4","protocol":"TCP","port_from":80,"port_to":80,"source":"0.0.0.0"},{"id":"B7D4070E4D152AB59809510A5482C689","protocol":"TCP","port_from":443,"port_to":443,"source":"0.0.0.0"},{"id":"37574C984BF42DACCF0005254B8AFD62","protocol":"TCP","port_from":3389,"port_to":3389,"source":"0.0.0.0"},{"id":"5B6AB9422901E0736E0AFD671FC43A1D","protocol":"TCP","port_from":8443,"port_to":8443,"source":"0.0.0.0"},{"id":"A80B495B3A488CEA2CCA95D40937ECF4","protocol":"TCP","port_from":8447,"port_to":8447,"source":"0.0.0.0"}],"server_ips":[],"cloudpanel_id":"FWFF88C_1"},{"id":"34A7E423DA3253E6D38563ED06F1041F","name":"Linux","description":"Linux","state":"ACTIVE","creation_date":"2015-10-16T11:19:12+00:00","default":1,"rules":[{"id":"28D76CE169A519BC5A145F0BF400FA1D","protocol":"TCP","port_from":80,"port_to":80,"source":"0.0.0.0"},{"id":"DD3DF02565F693FE41EF4B0E43279791","protocol":"TCP","port_from":443,"port_to":443,"source":"0.0.0.0"},{"id":"25298CBA468F797CE7214AA9267A06E2","protocol":"TCP","port_from":22,"port_to":22,"source":"0.0.0.0"},{"id":"317F85239380492E2D81394EEBD13820","protocol":"TCP","port_from":8443,"port_to":8443,"source":"0.0.0.0"},{"id":"DB03502185DBEB7254FC657338883C55","protocol":"TCP","port_from":8447,"port_to":8447,"source":"0.0.0.0"}],"server_ips":[],"cloudpanel_id":"FWFF88C_2"}]'
+    http_version: 
+  recorded_at: Mon, 01 Aug 2016 21:49:34 GMT
+recorded_with: VCR 3.0.3

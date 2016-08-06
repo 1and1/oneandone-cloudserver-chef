@@ -1,0 +1,65 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://cloudpanel-api.1and1.com/v1/server_appliances
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - excon/0.49.0
+      X-Token:
+      - _DUMMY_TOKEN_
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Fri, 29 Jul 2016 13:20:44 GMT
+      Server:
+      - Apache
+      X-Rate-Limit-Limit:
+      - '25'
+      X-Rate-Limit-Remaining:
+      - '24'
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      Strict-Transport-Security: _DUMMY_SEC_
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - X-API-TOKEN, X-USER
+      Access-Control-Allow-Methods:
+      - POST
+      Access-Control-Expose-Headers:
+      - Error-Msg
+      Connection:
+      - close
+      Content-Type:
+      - application/json
+      Set-Cookie: _DUMMY_COOKIE_
+      X-Iinfo:
+      - 9-5485816-5485840 NNNN CT(79 173 0) RT(1469798443280 225) q(0 0 2 -1) r(15
+        15) U5
+      X-Cdn:
+      - Incapsula
+    body:
+      encoding: UTF-8
+      string: '[{"id":"EC5DCA17E7CF86D968F60C222948C83F","name":"centos6-64std+Plesk12unlimited","available_datacenters":["81DEF28500FBC2A973FC0C620DF5B721","908DC2072407C94C8054610AD5A53B8C","4EFAD5836CE43ACA502FD5B99BEE44EF","5091F6D8CBFEF9C26ACE957C652D5D49"],"os_family":"Linux","os":"Centos6","os_version":"Centos","os_architecture":64,"os_image_type":"STANDARD","type":"IMAGE","min_hdd_size":20,"licenses":["Licencia
+        Plesk 10.4 - Ilimitados dominios"],"version":null,"categories":[]},{"id":"84E51A83034B68E05110B46890858EA9","name":"w2008r2datacenter64std+Plesk12unlimited","available_datacenters":["81DEF28500FBC2A973FC0C620DF5B721","908DC2072407C94C8054610AD5A53B8C","4EFAD5836CE43ACA502FD5B99BEE44EF","5091F6D8CBFEF9C26ACE957C652D5D49"],"os_family":"Windows","os":"Windows2008R2","os_version":"WindowsDatacenter","os_architecture":64,"os_image_type":"STANDARD","type":"IMAGE","min_hdd_size":40,"licenses":["Licencia
+        Plesk 10.4 - Ilimitados dominios","Windows 2012 Datacenter"],"version":null,"categories":[]},{"id":"0919F3FBB4F4A39EB1CD40462EC2BC88","name":"w2008r2datacenter64std+SQL2012express+Plesk12unlimited","available_datacenters":["81DEF28500FBC2A973FC0C620DF5B721","908DC2072407C94C8054610AD5A53B8C","4EFAD5836CE43ACA502FD5B99BEE44EF","5091F6D8CBFEF9C26ACE957C652D5D49"],"os_family":"Windows","os":"Windows2008R2","os_version":"WindowsDatacenter","os_architecture":64,"os_image_type":"STANDARD","type":"IMAGE","min_hdd_size":40,"licenses":["Licencia
+        Plesk 10.4 - Ilimitados dominios","Windows 2012 Datacenter"],"version":null,"categories":[]},{"id":"42FCDE1FED1F8520BE84508BF56AB733","name":"w2008r2datacenter64std+SQL2012web+Plesk12unlimited","available_datacenters":["81DEF28500FBC2A973FC0C620DF5B721","908DC2072407C94C8054610AD5A53B8C","4EFAD5836CE43ACA502FD5B99BEE44EF","5091F6D8CBFEF9C26ACE957C652D5D49"],"os_family":"Windows","os":"Windows2008R2","os_version":"WindowsDatacenter","os_architecture":64,"os_image_type":"STANDARD","type":"IMAGE","min_hdd_size":40,"licenses":["Licencia
+        Plesk 10.4 - Ilimitados dominios","Licencia SQL Server 2012 Web Edition","Windows
+        2012 Datacenter"],"version":null,"categories":[]},{"id":"C313F3D41074D4F35C13876FF65A0921","name":"w2008r2datacenter64std+SQL2012std+Plesk12unlimited","available_datacenters":["81DEF28500FBC2A973FC0C620DF5B721","908DC2072407C94C8054610AD5A53B8C","4EFAD5836CE43ACA502FD5B99BEE44EF","5091F6D8CBFEF9C26ACE957C652D5D49"],"os_family":"Windows","os":"Windows2008R2","os_version":"WindowsDatacenter","os_architecture":64,"os_image_type":"STANDARD","type":"IMAGE","min_hdd_size":40,"licenses":["Licencia
+        Plesk 10.4 - Ilimitados dominios","Licencia SQL Server 2012 Standard Edition","Windows
+        2012 Datacenter"],"version":null,"categories":[]},{"id":"B5F778B85C041347BCDCFC3172AB3F3C","name":"centos7-64std","available_datacenters":["81DEF28500FBC2A973FC0C620DF5B721","908DC2072407C94C8054610AD5A53B8C","4EFAD5836CE43ACA502FD5B99BEE44EF","5091F6D8CBFEF9C26ACE957C652D5D49"],"os_family":"Linux","os":"Centos7","os_version":"Centos","os_architecture":64,"os_image_type":"STANDARD","type":"IMAGE","min_hdd_size":20,"licenses":[],"version":null,"categories":[]},{"id":"80D2AC8E430FD0413EF2848D2EA3E633","name":"centos7-64std+Plesk12unlimited","available_datacenters":["81DEF28500FBC2A973FC0C620DF5B721","908DC2072407C94C8054610AD5A53B8C","4EFAD5836CE43ACA502FD5B99BEE44EF","5091F6D8CBFEF9C26ACE957C652D5D49"],"os_family":"Linux","os":"Centos7","os_version":"Centos","os_architecture":64,"os_image_type":"STANDARD","type":"IMAGE","min_hdd_size":20,"licenses":["Licencia
+        Plesk 10.4 - Ilimitados dominios"],"version":null,"categories":[]}]'
+    http_version: 
+  recorded_at: Fri, 29 Jul 2016 13:20:42 GMT
+recorded_with: VCR 3.0.3

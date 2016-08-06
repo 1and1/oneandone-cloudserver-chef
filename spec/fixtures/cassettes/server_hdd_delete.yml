@@ -1,0 +1,113 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://cloudpanel-api.1and1.com/v1/servers/951FEECF08A537A018B7D0285EAEEF6E
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - excon/0.49.0
+      X-Token:
+      - _DUMMY_TOKEN_
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Sun, 31 Jul 2016 12:18:50 GMT
+      Server:
+      - Apache
+      X-Rate-Limit-Limit:
+      - '25'
+      X-Rate-Limit-Remaining:
+      - '24'
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      Strict-Transport-Security: _DUMMY_SEC_
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - X-API-TOKEN, X-USER
+      Access-Control-Allow-Methods:
+      - POST
+      Access-Control-Expose-Headers:
+      - Error-Msg
+      Connection:
+      - close
+      Content-Type:
+      - application/json
+      Set-Cookie: _DUMMY_COOKIE_
+      X-Iinfo:
+      - 8-10478541-10478997 NNNN CT(80 175 0) RT(1469967525123 3977) q(0 1 3 2) r(9
+        9) U5
+      X-Cdn:
+      - Incapsula
+    body:
+      encoding: UTF-8
+      string: '{"id":"951FEECF08A537A018B7D0285EAEEF6E","cloudpanel_id":"EB28DA9","name":"new
+        test","description":"new description","datacenter":{"id":"4EFAD5836CE43ACA502FD5B99BEE44EF","country_code":"DE","location":"Germany"},"creation_date":"2016-07-27T19:04:14+00:00","first_password":"Hz353u7574","rsa_key":0,"status":{"state":"POWERED_OFF","percent":null},"hardware":{"fixed_instance_size_id":null,"vcore":2,"cores_per_processor":2,"ram":2,"hdds":[{"id":"E181C3906D358642F5173400B7DCEC44","size":60,"is_main":true},{"id":"245C66678F0E45C63596D3F48EBCCFA0","size":20,"is_main":false}]},"image":{"id":"9B9A214D50A7EEE8D9E37295DF834F70","name":"debian7-32min"},"dvd":null,"snapshot":null,"ips":[{"id":"333DEFC4E57846A09DDB6C847257A573","ip":"212.227.175.76","type":"IPV4","reverse_dns":null,"firewall_policy":{"id":"A4D6302FA44955C797772E34880CBA42","name":"centos7-64cpanel"},"load_balancers":[]}],"alerts":[],"monitoring_policy":null,"private_networks":null}'
+    http_version: 
+  recorded_at: Sun, 31 Jul 2016 12:18:44 GMT
+- request:
+    method: delete
+    uri: https://cloudpanel-api.1and1.com/v1/servers/951FEECF08A537A018B7D0285EAEEF6E/hardware/hdds/245C66678F0E45C63596D3F48EBCCFA0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - excon/0.49.0
+      X-Token:
+      - _DUMMY_TOKEN_
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 202
+      message: ''
+    headers:
+      Date:
+      - Sun, 31 Jul 2016 12:18:51 GMT
+      Server:
+      - Apache
+      X-Rate-Limit-Limit:
+      - '25'
+      X-Rate-Limit-Remaining:
+      - '23'
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      Strict-Transport-Security: _DUMMY_SEC_
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - X-API-TOKEN, X-USER
+      Access-Control-Allow-Methods:
+      - POST
+      Access-Control-Expose-Headers:
+      - Error-Msg
+      Connection:
+      - close
+      Content-Type:
+      - application/json
+      Set-Cookie: _DUMMY_COOKIE_
+      X-Iinfo:
+      - 0-7826417-7826423 NNNN CT(78 169 0) RT(1469967530006 132) q(0 0 2 0) r(15
+        15) U5
+      X-Cdn:
+      - Incapsula
+    body:
+      encoding: UTF-8
+      string: '{"id":"951FEECF08A537A018B7D0285EAEEF6E","cloudpanel_id":"EB28DA9","name":"new
+        test","description":"new description","datacenter":{"id":"4EFAD5836CE43ACA502FD5B99BEE44EF","country_code":"DE","location":"Germany"},"creation_date":"2016-07-27T19:04:14+00:00","first_password":"Hz353u7574","rsa_key":0,"status":{"state":"POWERED_OFF","percent":2},"hardware":{"fixed_instance_size_id":null,"vcore":2,"cores_per_processor":2,"ram":2,"hdds":[{"id":"E181C3906D358642F5173400B7DCEC44","size":60,"is_main":true},{"id":"245C66678F0E45C63596D3F48EBCCFA0","size":20,"is_main":false}]},"image":{"id":"9B9A214D50A7EEE8D9E37295DF834F70","name":"debian7-32min"},"dvd":null,"snapshot":null,"ips":[{"id":"333DEFC4E57846A09DDB6C847257A573","ip":"212.227.175.76","type":"IPV4","reverse_dns":null,"firewall_policy":{"id":"A4D6302FA44955C797772E34880CBA42","name":"centos7-64cpanel"},"load_balancers":[]}],"alerts":[],"monitoring_policy":null,"private_networks":null}'
+    http_version: 
+  recorded_at: Sun, 31 Jul 2016 12:18:46 GMT
+recorded_with: VCR 3.0.3

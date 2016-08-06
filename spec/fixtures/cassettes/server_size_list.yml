@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://cloudpanel-api.1and1.com/v1/servers/fixed_instance_sizes
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - excon/0.49.0
+      X-Token:
+      - _DUMMY_TOKEN_
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Fri, 29 Jul 2016 21:21:44 GMT
+      Server:
+      - Apache
+      X-Rate-Limit-Limit:
+      - '25'
+      X-Rate-Limit-Remaining:
+      - '24'
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      Strict-Transport-Security: _DUMMY_SEC_
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - X-API-TOKEN, X-USER
+      Access-Control-Allow-Methods:
+      - POST
+      Access-Control-Expose-Headers:
+      - Error-Msg
+      Connection:
+      - close
+      Content-Type:
+      - application/json
+      Set-Cookie: _DUMMY_COOKIE_
+      X-Iinfo:
+      - 10-9791677-9791684 NNNN CT(76 168 0) RT(1469827302938 119) q(0 0 3 -1) r(6
+        6) U5
+      X-Cdn:
+      - Incapsula
+    body:
+      encoding: UTF-8
+      string: '[{"id":"65929629F35BBFBA63022008F773F3EB","name":"M","hardware":{"vcore":1,"cores_per_processor":1,"ram":1,"unit":"GB","hdds":[{"size":40,"unit":"GB","is_main":true}]}},{"id":"591A7FEF641A98B38D1C4F7C99910121","name":"L","hardware":{"vcore":2,"cores_per_processor":1,"ram":2,"unit":"GB","hdds":[{"size":80,"unit":"GB","is_main":true}]}},{"id":"E903FA4F907B5AAF17A7E987FFCDCC6B","name":"XL","hardware":{"vcore":2,"cores_per_processor":1,"ram":4,"unit":"GB","hdds":[{"size":120,"unit":"GB","is_main":true}]}},{"id":"57862AE452473D551B1673938DD3DFFE","name":"XXL","hardware":{"vcore":4,"cores_per_processor":1,"ram":8,"unit":"GB","hdds":[{"size":160,"unit":"GB","is_main":true}]}},{"id":"3D4C49EAEDD42FBC23DB58FE3DEF464F","name":"S","hardware":{"vcore":1,"cores_per_processor":1,"ram":0.5,"unit":"GB","hdds":[{"size":30,"unit":"GB","is_main":true}]}},{"id":"6A2383038420110058C77057D261A07C","name":"3XL","hardware":{"vcore":8,"cores_per_processor":1,"ram":16,"unit":"GB","hdds":[{"size":240,"unit":"GB","is_main":true}]}},{"id":"EED49B709368C3715382730A604E9F6A","name":"4XL","hardware":{"vcore":12,"cores_per_processor":1,"ram":32,"unit":"GB","hdds":[{"size":360,"unit":"GB","is_main":true}]}},{"id":"EE48ACD55FEFE57E2651862A348D1254","name":"5XL","hardware":{"vcore":16,"cores_per_processor":1,"ram":48,"unit":"GB","hdds":[{"size":500,"unit":"GB","is_main":true}]}}]'
+    http_version: 
+  recorded_at: Fri, 29 Jul 2016 21:21:40 GMT
+recorded_with: VCR 3.0.3

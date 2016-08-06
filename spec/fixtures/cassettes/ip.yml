@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://cloudpanel-api.1and1.com/v1/public_ips
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - excon/0.49.0
+      X-Token:
+      - _DUMMY_TOKEN_
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Fri, 29 Jul 2016 19:25:11 GMT
+      Server:
+      - Apache
+      X-Rate-Limit-Limit:
+      - '25'
+      X-Rate-Limit-Remaining:
+      - '24'
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      Strict-Transport-Security: _DUMMY_SEC_
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - X-API-TOKEN, X-USER
+      Access-Control-Allow-Methods:
+      - POST
+      Access-Control-Expose-Headers:
+      - Error-Msg
+      Connection:
+      - close
+      Content-Type:
+      - application/json
+      Set-Cookie: _DUMMY_COOKIE_
+      X-Iinfo:
+      - 6-2931226-2931234 NNNN CT(75 79 0) RT(1469820310545 165) q(0 0 1 -1) r(6 6)
+        U5
+      X-Cdn:
+      - Incapsula
+    body:
+      encoding: UTF-8
+      string: '[{"id":"89FF3472577101E4AF59ED97317C0A78","ip":"212.227.5.18","type":"IPV4","assigned_to":{"id":"B8C4FA1CAD8A089164C673A250D3D9A0","name":"My
+        Load Balancer 2","type":"LOAD_BALANCER"},"reverse_dns":null,"is_dhcp":false,"state":"ACTIVE","datacenter":{"id":"4EFAD5836CE43ACA502FD5B99BEE44EF","country_code":"DE","location":"Germany"},"creation_date":"2016-04-01T01:26:49+00:00"},{"id":"17225B2F5C9E028A6BA2936283E1B9A2","ip":"212.227.174.144","type":"IPV4","assigned_to":null,"reverse_dns":null,"is_dhcp":false,"state":"ACTIVE","datacenter":{"id":"4EFAD5836CE43ACA502FD5B99BEE44EF","country_code":"DE","location":"Germany"},"creation_date":"2016-07-19T22:18:57+00:00"},{"id":"333DEFC4E57846A09DDB6C847257A573","ip":"212.227.175.76","type":"IPV4","assigned_to":{"id":"951FEECF08A537A018B7D0285EAEEF6E","name":"test-test","type":"SERVER"},"reverse_dns":null,"is_dhcp":true,"state":"ACTIVE","datacenter":{"id":"4EFAD5836CE43ACA502FD5B99BEE44EF","country_code":"DE","location":"Germany"},"creation_date":"2016-07-27T19:04:34+00:00"}]'
+    http_version: 
+  recorded_at: Fri, 29 Jul 2016 19:25:07 GMT
+recorded_with: VCR 3.0.3

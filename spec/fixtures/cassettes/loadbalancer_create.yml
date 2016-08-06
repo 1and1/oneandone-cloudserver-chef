@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://cloudpanel-api.1and1.com/v1/load_balancers
+    body:
+      encoding: UTF-8
+      string: '{"name":"testLB","description":"lb test","health_check_test":"NONE","health_check_interval":0,"persistence":true,"persistence_time":1000,"method":"LEAST_CONNECTIONS","rules":[{"protocol":"TCP","port_balancer":80,"port_server":8080,"source":null},{"protocol":"UDP","port_balancer":161,"port_server":161,"source":null}]}'
+    headers:
+      User-Agent:
+      - excon/0.49.0
+      X-Token:
+      - _DUMMY_TOKEN_
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 202
+      message: ''
+    headers:
+      Date:
+      - Wed, 03 Aug 2016 23:34:15 GMT
+      Server:
+      - Apache
+      X-Rate-Limit-Limit:
+      - '25'
+      X-Rate-Limit-Remaining:
+      - '24'
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      Strict-Transport-Security: _DUMMY_SEC_
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - X-API-TOKEN, X-USER
+      Access-Control-Allow-Methods:
+      - POST
+      Access-Control-Expose-Headers:
+      - Error-Msg
+      Connection:
+      - close
+      Content-Type:
+      - application/json
+      Set-Cookie: _DUMMY_COOKIE_
+      X-Iinfo:
+      - 0-1784231-1784364 NNNN CT(72 158 0) RT(1470267251008 3903) q(0 0 2 -1) r(7
+        7) U5
+      X-Cdn:
+      - Incapsula
+    body:
+      encoding: UTF-8
+      string: '{"id":"C220C84E9B06913134245A5FC0849E44","name":"testLB","state":"CONFIGURING","creation_date":"2016-08-03T23:34:16+00:00","description":"lb
+        test","ip":null,"health_check_test":"NONE","health_check_interval":null,"health_check_path":null,"health_check_path_parser":null,"persistence":true,"persistence_time":1000,"method":"LEAST_CONNECTIONS","datacenter":{"id":"908DC2072407C94C8054610AD5A53B8C","country_code":"US","location":"United
+        States of America"},"rules":[{"id":"30BDA0592790D1960844B934F70FE0C6","protocol":"TCP","port_balancer":80,"port_server":8080,"source":"0.0.0.0"},{"id":"82338C8255FDFCEE9F4FEC18F00D9704","protocol":"UDP","port_balancer":161,"port_server":161,"source":"0.0.0.0"}],"server_ips":[],"cloudpanel_id":"LBFF88C_11"}'
+    http_version: 
+  recorded_at: Wed, 03 Aug 2016 23:34:12 GMT
+recorded_with: VCR 3.0.3
