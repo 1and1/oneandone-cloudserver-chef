@@ -2,7 +2,7 @@
 
 ## Description
 
-1&amp;1 Chef Knife plugin for managing 1&1 Cloud servers
+1&amp;1 Chef Knife plugin for managing 1&1 Cloud servers. For more information on the 1&amp;1 Chef Knife plugin, see the [1&1 Community Portal](https://www.1and1.com/cloud-community/).
 
 ## Requirements
 
