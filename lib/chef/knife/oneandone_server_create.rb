@@ -90,6 +90,11 @@ class Chef
              description: 'ID of a monitoring policy to be used for the server',
              proc: proc { |monitoring_policy_id| Chef::Config[:knife][:monitoring_policy_id] = monitoring_policy_id }
 
+      option :public_key,
+             short: '-pk PUBLIC_KEY',
+             long: '--public-key PUBLIC_KEY',
+             description: 'A comma separated list of SSH Key IDs to be copied to the server'
+
       option :wait,
              long: '--[no-]wait',
              description: 'Wait for the server deployment to complete (true by default).',
@@ -116,6 +121,17 @@ class Chef
           ]
         end
 
+
+        pkeys_config = config[:public_key].split(",")
+        pkeys = nil
+
+        if !pkeys_config.nil? && !pkeys_config.empty?
+          pkeys = []
+          pkeys_config.each do |key|
+            pkeys << key.strip
+          end
+        end
+        
         server = OneAndOne::Server.new
         response = server.create(
           name: config[:name],
@@ -133,7 +149,8 @@ class Chef
           firewall_id: config[:firewall_id],
           ip_id: config[:ip_id],
           load_balancer_id: config[:load_balancer_id],
-          monitoring_policy_id: config[:monitoring_policy_id]
+          monitoring_policy_id: config[:monitoring_policy_id],
+          public_key: pkeys
         )
 
         if config[:wait]

@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://cloudpanel-api.1and1.com/v1/ssh_keys/951FEECF08A537A018B7D0285EAEEF6E
+    body:
+      encoding: UTF-8
+      string: '{"name":"My-updated-ssh-key","description":"My-updated-ssh-key-description"}'
+    headers:
+      User-Agent:
+      - excon/0.62.0
+      X-Token:
+      - _DUMMY_TOKEN_
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Mon, 09 Apr 2018 22:56:40 GMT
+      Server:
+      - Apache
+      X-Rate-Limit-Limit:
+      - '100.00'
+      X-Rate-Limit-Remaining:
+      - '99'
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      Error-Msg:
+      - NGCS\CORE\SSHKEYS\SSHKEY_NOT_FOUND
+      Strict-Transport-Security: _DUMMY_SEC_
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - X-API-TOKEN, X-USER
+      Access-Control-Allow-Methods:
+      - POST
+      Access-Control-Expose-Headers:
+      - Error-Msg
+      Connection:
+      - close
+      Content-Type:
+      - application/json
+      Set-Cookie: _DUMMY_COOKIE_
+      X-Iinfo:
+      - 10-240320214-240320271 NNNN CT(43 92 0) RT(1523314599287 158) q(0 0 1 2) r(3
+        3) U5
+      X-Cdn:
+      - Incapsula
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"951FEECF08A537A018B7D0285EAEEF6E","name":"My-updated-ssh-key","description":"My-updated-ssh-key-description","state":"POWERED_ON","servers":[],"md5":"c4d5d4e909e49820c2286143e5974221","public_key":"some_key","creation_date":"2018-02-01T16:42:30+00:00"}'
+    http_version: 
+  recorded_at: Mon, 09 Apr 2018 22:56:40 GMT
+recorded_with: VCR 3.0.3

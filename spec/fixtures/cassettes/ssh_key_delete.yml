@@ -1,0 +1,111 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://cloudpanel-api.1and1.com/v1/ssh_keys/951FEECF08A537A018B7D0285EAEEF6E
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - excon/0.49.0
+      X-Token:
+      - _DUMMY_TOKEN_
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Tue, 02 Aug 2016 23:38:23 GMT
+      Server:
+      - Apache
+      X-Rate-Limit-Limit:
+      - '25'
+      X-Rate-Limit-Remaining:
+      - '24'
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      Strict-Transport-Security: _DUMMY_SEC_
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - X-API-TOKEN, X-USER
+      Access-Control-Allow-Methods:
+      - POST
+      Access-Control-Expose-Headers:
+      - Error-Msg
+      Connection:
+      - close
+      Content-Type:
+      - application/json
+      Set-Cookie: _DUMMY_COOKIE_
+      X-Iinfo:
+      - 1-23861990-23862284 NNNN CT(73 78 0) RT(1470181097462 5183) q(0 0 1 -1) r(5
+        5) U5
+      X-Cdn:
+      - Incapsula
+    body:
+      encoding: UTF-8
+      string: '{"id":"951FEECF08A537A018B7D0285EAEEF6E","name":"MySSHkey1","description":"MySSHkeydescription","state":"POWERED_ON","servers":[{"id":"D0F6D8C8ED29D3036F94C27BBB789536","name":"Server1"},{"id":"E0F6D8C8ED29D3036F94C27BBB789537","name":"Server2"}],"md5":"5df9f63916ebf8528697b629022993e8","public_key":"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCqGKukO1De7zhZj6+H0qtjTkVxwTCpvKe4eCZ0FPqri0cb2JZfXJ/DgYSF6vUpwmJG8wVQZKjeGcjDOL5UlsuusFncCzWBQ7RKNUSesmQRMSGkVb1/3j+skZ6UtW+5u09lHNsj6tQ51s1SPrCBkedbNf0Tp0GbMJDyR4e9T04ZZwIDAQAB","creation_date":"30-06-2015T14:52:35+00.00"}'
+    http_version:
+  recorded_at: Tue, 02 Aug 2016 23:38:21 GMT
+- request:
+    method: delete
+    uri: https://cloudpanel-api.1and1.com/v1/ssh_keys/951FEECF08A537A018B7D0285EAEEF6E
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - excon/0.49.0
+      X-Token:
+      - _DUMMY_TOKEN_
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Tue, 02 Aug 2016 23:38:23 GMT
+      Server:
+      - Apache
+      X-Rate-Limit-Limit:
+      - '25'
+      X-Rate-Limit-Remaining:
+      - '24'
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      Strict-Transport-Security: _DUMMY_SEC_
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - X-API-TOKEN, X-USER
+      Access-Control-Allow-Methods:
+      - POST
+      Access-Control-Expose-Headers:
+      - Error-Msg
+      Connection:
+      - close
+      Content-Type:
+      - application/json
+      Set-Cookie: _DUMMY_COOKIE_
+      X-Iinfo:
+      - 1-23861990-23862284 NNNN CT(73 78 0) RT(1470181097462 5183) q(0 0 1 -1) r(5
+        5) U5
+      X-Cdn:
+      - Incapsula
+    body:
+      encoding: UTF-8
+      string: '{"id":"951FEECF08A537A018B7D0285EAEEF6E","name":"MySSHkey1","description":"MySSHkeydescription","state":"DELETING","servers":[{"id":"D0F6D8C8ED29D3036F94C27BBB789536","name":"Server1"},{"id":"E0F6D8C8ED29D3036F94C27BBB789537","name":"Server2"}],"md5":"5df9f63916ebf8528697b629022993e8","public_key":"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCqGKukO1De7zhZj6+H0qtjTkVxwTCpvKe4eCZ0FPqri0cb2JZfXJ/DgYSF6vUpwmJG8wVQZKjeGcjDOL5UlsuusFncCzWBQ7RKNUSesmQRMSGkVb1/3j+skZ6UtW+5u09lHNsj6tQ51s1SPrCBkedbNf0Tp0GbMJDyR4e9T04ZZwIDAQAB","creation_date":"30-06-2015T14:52:35+00.00"}'
+    http_version: 
+  recorded_at: Tue, 02 Aug 2016 23:38:21 GMT
+recorded_with: VCR 3.0.3
