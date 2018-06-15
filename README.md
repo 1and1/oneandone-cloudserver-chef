@@ -130,6 +130,46 @@ Starts one or more servers.
 
 Stops one or more servers.
 
+### knife oneandone block storage create
+
+Creates a new block storage.
+
+### knife oneandone block storage list
+
+Lists available block storages.
+
+### knife oneandone block storage rename
+
+Updates block storage's name and/or description.
+
+### knife oneandone block storage delete
+
+Deletes one or more block storages.
+
+### knife oneandone block storage attach
+
+Attaches a block storage to a server.
+
+### knife oneandone block storage detach
+
+Detaches a block storage from a server.
+
+### knife oneandone ssh key create
+
+Creates a new ssh key.
+
+### knife oneandone ssh key list
+
+Lists available ssh keys.
+
+### knife oneandone ssh key rename
+
+Updates ssh key's name and/or description.
+
+### knife oneandone ssh key delete
+
+Deletes one or more ssh keys.
+
 ## Usage
 
 Before deploying a server to your 1&amp;1 Cloud environment, you may want set up a dedicated firewall policy or a load balancer for the server.
@@ -255,6 +295,23 @@ with auto-confirming all prompts for deletion.
 ```
 knife oneandone server delete 341EB3FF15E861309C4D1C3BC6A8B17B D67F6B24C9C0AED76B8573D267B0EDAB -y
 ```
+
+A block storage can be created as follows:
+
+```
+knife oneandone block storage create -n chef-blk -s 30 --description test_chef_blkstore -D 5091F6D8CBFEF9C26ACE957C652D5D49
+```
+
+An ssh key can be created as follows:
+
+```
+knife oneandone ssh key create -n chef-ssh-key --description test_chef_sshkey
+```
+
+To create a server with ssh keys, pass the comma-separated list of ssh key ids (or just a single id) using `--public-key` parameter:
+```
+knife oneandone server create -n chef-serverssh -I C5A349786169F140BCBC335675014C08 -P 2 -C 1 -r 2 -H 40 --public-key E07CA9CA5D8F09A2872FC27160EE28D2
+``` 
 
 ## Development
 

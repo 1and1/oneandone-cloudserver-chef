@@ -1,0 +1,111 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://cloudpanel-api.1and1.com/v1/block_storages/6AD2F180B7B666539EF75A02FE227085
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - excon/0.49.0
+      X-Token:
+      - _DUMMY_TOKEN_
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Sun, 31 Jul 2016 12:48:55 GMT
+      Server:
+      - Apache
+      X-Rate-Limit-Limit:
+      - '25'
+      X-Rate-Limit-Remaining:
+      - '24'
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      Strict-Transport-Security: _DUMMY_SEC_
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - X-API-TOKEN, X-USER
+      Access-Control-Allow-Methods:
+      - POST
+      Access-Control-Expose-Headers:
+      - Error-Msg
+      Connection:
+      - close
+      Content-Type:
+      - application/json
+      Set-Cookie: _DUMMY_COOKIE_
+      X-Iinfo:
+      - 1-13460516-13460788 NNNN CT(67 148 0) RT(1469969329303 4614) q(0 0 2 1) r(5
+        5) U5
+      X-Cdn:
+      - Incapsula
+    body:
+      encoding: UTF-8
+      string: '{"id":"6AD2F180B7B666539EF75A02FE227085","size":200,"state":"POWERED_ON","description":"Myblockstorageforcontainers","datacenter":{"id":"D0F6D8C8ED29D3036F94C27BBB7BAD36","location":"USA","country_code":"US"},"name":"Myblockstorage1","creation_date":"2015-05-06T08:33:25+00:00","server":{"id":"638ED28205B1AFD7ADEF569C725DD85F","name":"Myserver1"}}'
+    http_version:
+  recorded_at: Sun, 31 Jul 2016 12:48:49 GMT
+- request:
+    method: delete
+    uri: https://cloudpanel-api.1and1.com/v1/block_storages/6AD2F180B7B666539EF75A02FE227085
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - excon/0.49.0
+      X-Token:
+      - _DUMMY_TOKEN_
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Tue, 02 Aug 2016 23:38:23 GMT
+      Server:
+      - Apache
+      X-Rate-Limit-Limit:
+      - '25'
+      X-Rate-Limit-Remaining:
+      - '24'
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      Strict-Transport-Security: _DUMMY_SEC_
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - X-API-TOKEN, X-USER
+      Access-Control-Allow-Methods:
+      - POST
+      Access-Control-Expose-Headers:
+      - Error-Msg
+      Connection:
+      - close
+      Content-Type:
+      - application/json
+      Set-Cookie: _DUMMY_COOKIE_
+      X-Iinfo:
+      - 1-23861990-23862284 NNNN CT(73 78 0) RT(1470181097462 5183) q(0 0 1 -1) r(5
+        5) U5
+      X-Cdn:
+      - Incapsula
+    body:
+      encoding: UTF-8
+      string: '{"id":"6AD2F180B7B666539EF75A02FE227084","size":200,"state":"REMOVING","description":"Myblockstorageforcontainers","datacenter":{"id":"D0F6D8C8ED29D3036F94C27BBB7BAD36","location":"USA","country_code":"US"},"name":"Myblockstorage1","creation_date":"2015-05-06T08:33:25+00:00","server":{"id":"638ED28205B1AFD7ADEF569C725DD85F","name":"Myserver1"}}'
+    http_version: 
+  recorded_at: Tue, 02 Aug 2016 23:38:21 GMT
+recorded_with: VCR 3.0.3
