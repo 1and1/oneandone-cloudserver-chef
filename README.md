@@ -8,7 +8,7 @@
 * [Sub-Commands](#sub-commands)
 * [Usage](#usage)
 * [Development](#development)
-* [Contribute to the Project](#contribute-to-the-problem)
+* [Contribute to the Project](#contribute-to-the-project)
 
 ## Description
 
