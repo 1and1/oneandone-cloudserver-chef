@@ -16,8 +16,8 @@ class Chef
         formated_output(response, true)
 
         baremetal_model_list = [
-            ui.color('ID', :bold),
-            ui.color('Name', :bold)
+          ui.color('ID', :bold),
+          ui.color('Name', :bold)
         ]
         response.each do |baremetal_model|
           baremetal_model_list << baremetal_model['id']
