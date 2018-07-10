@@ -211,7 +211,7 @@ EE48ACD55FEFE57E2651862A348D1254  5XL   48        16             1              
 The format option may be used with the list commands to output JSON or yaml (e.g. ```-F json```, ```--format yaml```).
 
 
-To create a server, you can either specify a fixed-size ID or a flex configuration of the hardware.
+To create a cloud server, you can either specify a fixed-size ID or a flex configuration of the hardware. For baremetal servers, you have to specify a baremetal_model_id.
 
 ```
 knife oneandone server create -n Demo-Server \
@@ -223,6 +223,20 @@ Deploying, wait for the operation to complete...
         Name: Demo-Server
         First IP: 109.228.53.48
         First Password: Qc9knjVAK1
+done
+```
+
+```
+knife oneandone server create -n chef-baremetal-server \
+  --appliance-id 33352CCE1E710AF200CD1234BFD18862 \
+  --datacenter-id 4EFAD5836CE43ACA502FD5B99BEE44EF \
+  --baremetal-model-id 81504C620D98BCEBAA5202D145203B4B \
+  --server-type baremetal
+Deploying, wait for the operation to complete...
+	ID: A022DD2CD1629BBCD7873086C113C1D4
+	Name: chef-baremetal-server
+	First IP: 82.165.251.137
+	First Password: Ur37Ncwwpf
 done
 ```
 
