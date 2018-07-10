@@ -1,4 +1,4 @@
-$LOAD_PATH.unshift File.expand_path('../../lib/chef/knife', __FILE__)
+$LOAD_PATH.unshift File.expand_path('../lib/chef/knife', __dir__)
 
 require 'oneandone'
 require 'vcr'

@@ -132,12 +132,11 @@ class Chef
           ]
         end
 
-
         pkeys_config = config[:public_key]
         pkeys = nil
 
         if !pkeys_config.nil? && !pkeys_config.empty?
-          pkeys_config = pkeys_config.split(",")
+          pkeys_config = pkeys_config.split(',')
           pkeys = []
           pkeys_config.each do |key|
             pkeys << key.strip

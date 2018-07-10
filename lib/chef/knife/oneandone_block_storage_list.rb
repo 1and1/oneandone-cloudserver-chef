@@ -22,7 +22,7 @@ class Chef
           ui.color('State', :bold),
           ui.color('Datacenter', :bold),
           ui.color('Server ID', :bold),
-          ui.color('Server Name', :bold),
+          ui.color('Server Name', :bold)
         ]
 
         response.each do |blks|
