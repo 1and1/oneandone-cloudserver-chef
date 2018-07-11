@@ -36,25 +36,31 @@ class Chef
              description: 'ID of the fixed instance size',
              proc: proc { |fixed_size_id| Chef::Config[:knife][:fixed_size_id] = fixed_size_id }
 
+      option :baremetal_model_id,
+             short: '-BM BAREMETAL_MODEL_ID',
+             long: '--baremetal-model-id BAREMETAL_MODEL_ID',
+             description: "ID of the baremetal model. Required, if 'server_type' is 'baremetal'",
+             proc: proc { |baremetal_model_id| Chef::Config[:knife][:baremetal_model_id] = baremetal_model_id }
+
       option :cpu,
              short: '-P PROCESSORS',
              long: '--cpu PROCESSORS',
-             description: "The number of processors. Required, if '--fixed-size-id' is not specified."
+             description: "The number of processors. Required, if neither '--fixed-size-id' nor '--baremetal-model-id' are specified."
 
       option :cores,
              short: '-C CORES',
              long: '--cores CORES',
-             description: "The number of cores per processor. Required, if '--fixed-size-id' is not specified."
+             description: "The number of cores per processor. Required, if neither '--fixed-size-id' nor '--baremetal-model-id' are specified."
 
       option :ram,
              short: '-r RAM',
              long: '--ram RAM',
-             description: "The amount of RAM in GB. Required, if '--fixed-size-id' is not specified."
+             description: "The amount of RAM in GB. Required, if neither '--fixed-size-id' nor '--baremetal-model-id' are specified."
 
       option :hdd_size,
              short: '-H HDD_SIZE',
              long: '--hdd-size HDD_SIZE',
-             description: "The HDD size in GB. Required, if '--fixed-size-id' is not specified."
+             description: "The HDD size in GB. Required, if neither '--fixed-size-id' nor '--baremetal-model-id' are specified."
 
       option :password,
              short: '-p PASSWORD',
@@ -95,6 +101,11 @@ class Chef
              long: '--public-key PUBLIC_KEY',
              description: 'A comma separated list of SSH Key IDs to be copied to the server'
 
+      option :server_type,
+             short: '-st SERVER_TYPE',
+             long: '--server-type SERVER_TYPE',
+             description: "Server type 'cloud' or 'baremetal'."
+
       option :wait,
              long: '--[no-]wait',
              description: 'Wait for the server deployment to complete (true by default).',
@@ -121,17 +132,17 @@ class Chef
           ]
         end
 
-
-        pkeys_config = config[:public_key].split(",")
+        pkeys_config = config[:public_key]
         pkeys = nil
 
         if !pkeys_config.nil? && !pkeys_config.empty?
+          pkeys_config = pkeys_config.split(',')
           pkeys = []
           pkeys_config.each do |key|
             pkeys << key.strip
           end
         end
-        
+
         server = OneAndOne::Server.new
         response = server.create(
           name: config[:name],
@@ -150,7 +161,9 @@ class Chef
           ip_id: config[:ip_id],
           load_balancer_id: config[:load_balancer_id],
           monitoring_policy_id: config[:monitoring_policy_id],
-          public_key: pkeys
+          public_key: pkeys,
+          server_type: config[:server_type],
+          baremetal_model_id: config[:baremetal_model_id]
         )
 
         if config[:wait]

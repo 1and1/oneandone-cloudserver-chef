@@ -1,4 +1,14 @@
-# Knife::Oneandone
+# 1&1 Chef Knife Plugin
+
+## Table of Contents
+* [Description](#description)
+* [Requirements](#requirements)
+* [Installation](#installation)
+* [Configuration](#configuration)
+* [Sub-Commands](#sub-commands)
+* [Usage](#usage)
+* [Development](#development)
+* [Contribute to the Project](#contribute-to-the-project)
 
 ## Description
 
@@ -34,141 +44,141 @@ The 1&amp;1 Chef Knife plugin requires a valid 1&amp;1 API key. Add your 1&amp;1
 knife[:oneandone_api_key] = '_YOUR_API_KEY_'
 ```
 
-## Sub Commands
+## Sub-Commands
 
-The following sub-commands are available with the plugin:
+The following sub-commands are available with the plugin.
 
-### knife oneandone appliance list
+**List all server appliances**
 
-Lists all server appliances.
+    knife oneandone appliance list
 
-### knife oneandone datacenter list
+**List all data centers**
 
-Lists all data centers.
+    knife oneandone datacenter list
 
-### knife oneandone firewall create
+**Create a new firewall policy**
 
-Creates a new firewall policy.
+    knife oneandone firewall create
 
-### knife oneandone firewall delete
+**Delete one or more firewall policies**
 
-Deletes one or more firewall policies.
+    knife oneandone firewall delete
 
-### knife oneandone firewall list
+**List available firewall policies**
 
-Lists available firewall policies.
+    knife oneandone firewall list
 
-### knife oneandone ip list
+**List allocated public IP addresses**
 
-Lists allocated public IPs.
+    knife oneandone ip list
 
-### knife oneandone loadbalancer create
+**Create a new load balancer**
 
-Creates a new load balancer.
+    knife oneandone loadbalancer create
 
-### knife oneandone loadbalancer delete
+**Delete one or more load balancers**
 
-Deletes one or more load balancers.
+    knife oneandone loadbalancer delete
 
-### knife oneandone loadbalancer list
+**List available load balancers**
 
-Lists available load balancers.
+    knife oneandone loadbalancer list
 
-### knife oneandone mp list
+**List available monitoring policies**
 
-Lists available monitoring policies.
+    knife oneandone mp list
 
-### knife oneandone server create
+**Create a new server**
 
-Creates a new server.
+    knife oneandone server create
 
-### knife oneandone server delete
+**Delete one or more servers**
 
-Deletes one or more servers.
+    knife oneandone server delete
 
-### knife oneandone server hdd add
+**Add one or more hard disks to server**
 
-Adds one or more hard disks to server.
+    knife oneandone server hdd add
 
-### knife oneandone server hdd delete
+**Remove server's hard disk**
 
-Removes server's hard disk.
+    knife oneandone server hdd delete
 
-### knife oneandone server hdd list
+**List server's hard disks**
 
-Lists server's hard disks.
+    knife oneandone server hdd list
 
-### knife oneandone server hdd resize
+**Resize server's hard disk**
 
-Resizes server's hard disk.
+    knife oneandone server hdd resize
 
-### knife oneandone server list
+**List available servers**
 
-Lists available servers.
+    knife oneandone server list
 
-### knife oneandone server modify
+**Modify server's hardware configuration: CPU/cores count, RAM amount and/or fixed server size.**
 
-Modifies server's hardware configuration: CPU/cores count, RAM amount and/or fixed server size.
+    knife oneandone server modify
 
-### knife oneandone server reboot
+**Reboot one or more servers**
 
-Reboots one or more servers.
+    knife oneandone server reboot
 
-### knife oneandone server rename
+**Update server's name and/or description**
 
-Updates server's name and/or description.
+    knife oneandone server rename
 
-### knife oneandone server size list
+**List available fixed-server-size configurations**
 
-Lists available fixed-server-size configurations.
+    knife oneandone server size list
 
-### knife oneandone server start
+**Start one or more servers**
 
-Starts one or more servers.
+    knife oneandone server start
 
-### knife oneandone server stop
+**Stop one or more servers**
 
-Stops one or more servers.
+    knife oneandone server stop
 
-### knife oneandone block storage create
+**Creates a new block storage**
 
-Creates a new block storage.
+    knife oneandone block storage create
 
-### knife oneandone block storage list
+**Lists available block storages.**
 
-Lists available block storages.
+    knife oneandone block storage list
 
-### knife oneandone block storage rename
+**Updates block storage's name and/or description**
 
-Updates block storage's name and/or description.
+    knife oneandone block storage rename
 
-### knife oneandone block storage delete
+**Deletes one or more block storages**
 
-Deletes one or more block storages.
+    knife oneandone block storage delete
 
-### knife oneandone block storage attach
+**Attaches a block storage to a server**
 
-Attaches a block storage to a server.
+    knife oneandone block storage attach
 
-### knife oneandone block storage detach
+**Detaches a block storage from a server**
 
-Detaches a block storage from a server.
+    knife oneandone block storage detach
 
-### knife oneandone ssh key create
+**Creates a new ssh key**
 
-Creates a new ssh key.
+    knife oneandone ssh key create
 
-### knife oneandone ssh key list
+**Lists available ssh keys**
 
-Lists available ssh keys.
+    knife oneandone ssh key list
 
-### knife oneandone ssh key rename
+**Updates ssh key's name and/or description**
 
-Updates ssh key's name and/or description.
+    knife oneandone ssh key rename
 
-### knife oneandone ssh key delete
+**Deletes one or more ssh keys**
 
-Deletes one or more ssh keys.
+    knife oneandone ssh key delete
 
 ## Usage
 
@@ -211,7 +221,7 @@ EE48ACD55FEFE57E2651862A348D1254  5XL   48        16             1              
 The format option may be used with the list commands to output JSON or yaml (e.g. ```-F json```, ```--format yaml```).
 
 
-To create a server, you can either specify a fixed-size ID or a flex configuration of the hardware.
+To create a cloud server, you can either specify a fixed-size ID or a flex configuration of the hardware. For baremetal servers, you have to specify a baremetal_model_id.
 
 ```
 knife oneandone server create -n Demo-Server \
@@ -223,6 +233,20 @@ Deploying, wait for the operation to complete...
         Name: Demo-Server
         First IP: 109.228.53.48
         First Password: Qc9knjVAK1
+done
+```
+
+```
+knife oneandone server create -n chef-baremetal-server \
+  --appliance-id 33352CCE1E710AF200CD1234BFD18862 \
+  --datacenter-id 4EFAD5836CE43ACA502FD5B99BEE44EF \
+  --baremetal-model-id 81504C620D98BCEBAA5202D145203B4B \
+  --server-type baremetal
+Deploying, wait for the operation to complete...
+	ID: A022DD2CD1629BBCD7873086C113C1D4
+	Name: chef-baremetal-server
+	First IP: 82.165.251.137
+	First Password: Ur37Ncwwpf
 done
 ```
 
@@ -289,8 +313,7 @@ ID                                Size (GB)  Main
 BA5486B5C0F1861307F80DEB880A4041  160        false
 ```
 
-Specify the ID of any server you intend to start, stop, reboot or delete. The next example shows a delete operation 
-with auto-confirming all prompts for deletion.
+Specify the ID of any server you intend to start, stop, reboot or delete. The next example shows a delete operation with auto-confirming all prompts for deletion.
 
 ```
 knife oneandone server delete 341EB3FF15E861309C4D1C3BC6A8B17B D67F6B24C9C0AED76B8573D267B0EDAB -y
@@ -317,14 +340,14 @@ knife oneandone server create -n chef-serverssh -I C5A349786169F140BCBC335675014
 
 After checking out the repository, run `bundle install` to install dependencies.
 
-Use the bundler to run the tests. Declare ONEANDONE_API_KEY environment variable before running the tests.
+Use the bundler to run the tests. Declare the `ONEANDONE_API_KEY` environment variable before running the tests.
 
     $ export ONEANDONE_API_KEY="_YOUR_API_KEY_"
     $ bundle exec rspec
 
 To install this gem onto your local machine, run `bundle exec rake install`.
 
-## Contributing
+## Contribute to the Project
 
 1. Fork the repository (`https://github.com/1and1/oneandone-cloudserver-chef/fork`).
 2. Create a new feature branch (`git checkout -b my-new-feature`).
