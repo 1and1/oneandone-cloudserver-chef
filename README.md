@@ -190,6 +190,12 @@ To create a firewall policy and allow the access from any IP address:
 knife oneandone firewall create -n my-firewall -p TCP,UDP,ICMP --port-from 80,161 --port-to 80,162
 ```
 
+To create a firewall policy with rule description and `port` parameter:
+
+```
+knife oneandone firewall create -n chef-firewall -p TCP --port 80-85 --rule-description testing-firewall-improvements
+```
+
 A load balancer can be created as follows:
 
 ```
