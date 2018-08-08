@@ -26,6 +26,10 @@ class Chef
              long: '--port-to [PORT_TO]',
              description: 'A comma separated list of the second firewall ports in range (80,162,443)'
 
+      option :port,
+             long: '--port [PORT]',
+             description: 'Allows to introduce either single ports or port ranges to configured the firewall policies instead of using port_from, port_to. (80-443)'
+
       option :protocol,
              short: '-p [PROTOCOL]',
              long: '--protocol [PROTOCOL]',
@@ -35,6 +39,15 @@ class Chef
              short: '-S [SOURCE_IP]',
              long: '--source [SOURCE_IP]',
              description: 'A comma separated list of the source IPs allowed to access though the firewall'
+
+      option :rule_description,
+             long: '--rule-description [RULE-DESCRIPTION]',
+             description: 'Description of the firewall rule'
+
+      option :action,
+             short: '-a [ACTION]',
+             long: '--action [ACTION]',
+             description: 'Provides deny rules that close all ports. It is used together with a new protocol type "ANY"'
 
       option :wait,
              short: '-W',
@@ -51,8 +64,11 @@ class Chef
         ports_from = split_delimited_input(config[:port_from])
         ports_to = split_delimited_input(config[:port_to])
         sources = split_delimited_input(config[:source])
+        rule_description = config[:rule_description]
+        action = config[:action]
+        port = config[:port]
 
-        validate_rules(ports_from, ports_to, protocols)
+        validate_rules(ports_from, ports_to, port, protocols)
 
         rules = []
 
@@ -61,12 +77,17 @@ class Chef
             'protocol' => protocols[i].upcase,
             'port_from' => ports_from[i].nil? ? nil : ports_from[i].to_i,
             'port_to' => ports_to[i].nil? ? nil : ports_to[i].to_i,
-            'source' => sources[i]
+            'source' => sources[i],
+            'description' => rule_description.nil? ? nil : rule_description,
+            'action' => action.nil? ? nil : action,
+            'port' => port.nil? ? nil : port
           }
-          rules << rule
+          rules << rule.select{|k,v| !v.nil?}
         end
 
         init_client
+
+        # puts rules
 
         firewall = OneAndOne::Firewall.new
         response = firewall.create(name: config[:name], description: config[:description], rules: rules)
@@ -81,14 +102,14 @@ class Chef
         end
       end
 
-      def validate_rules(ports_from, ports_to, protocols)
+      def validate_rules(ports_from, ports_to, port, protocols)
         if ports_from.length != ports_to.length
           ui.error('You must supply equal number of --port-from and --port-to values!')
           exit 1
         end
 
-        if protocols.length < ports_from.length
-          ui.error('It is required that the value count of --protocol >= --port-from value count!')
+        if protocols.length < ports_from.length && port.nil?
+          ui.error('It is required that the value count of --protocol >= --port-from or --port value is provided!')
           exit 1
         end
       end
